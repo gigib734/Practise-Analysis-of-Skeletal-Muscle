@@ -13,4 +13,12 @@ options(timeout = 5000)
 tempdir()
 packageVersion("ChAMP")
 library(ChAMP)
+
 packageDescription("ChAMP")[c("Version", "Depends", "Imports")]
+unlink(
+  "C:/Users/gbloc/AppData/Local/R/win-library/4.5/00LOCK-IlluminaHumanMethylationEPICanno.ilm10b4.hg19",
+  recursive = TRUE
+)
+
+BiocManager::install("IlluminaHumanMethylationEPICanno.ilm10b4.hg19")
+BiocManager::install("org.Hs.eg.db")
