@@ -41,3 +41,6 @@ write.csv(goodcsv, "C:/Users/gbloc/OneDrive/Desktop/PCDHG_Gila/Coding/Practise D
 
 skelly <- champ.load(directory = "C:/Users/gbloc/OneDrive/Desktop/PCDHG_Gila/Coding/Practise Data processing/skeleta/GSE61452/Idats", arraytype = "450K")
 load()
+
+path1 <- ("C:/Users/gbloc/OneDrive/Desktop/PCDHG_Gila/Coding/Practise Data processing/skeleta/GSE61452/Idats")
+champ.process(directory = path1)
