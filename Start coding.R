@@ -22,3 +22,22 @@ unlink(
 
 BiocManager::install("IlluminaHumanMethylationEPICanno.ilm10b4.hg19")
 BiocManager::install("org.Hs.eg.db")
+library(DMRcate)
+BiocManager::install("geneLenDataBase")
+
+testDir=system.file("extdata",package="ChAMPdata")
+myLoad <- champ.load(testDir,arraytype="450K")
+ 
+badfile <- read.csv("C:/Users/gbloc/OneDrive/Desktop/PCDHG_Gila/Coding/Practise Data processing/skeleta/GSE61452/Idats/skeletal_sheet.csv")
+
+badfile$Sentrix_ID <- sub(".*_(\\d+)_.*", "\\1", badfile$Sample_Name)
+badfile$Sentrix_Position <- sub(".*_(R[0-9]+C[0-9]+)", "\\1", badfile$Sample_Name)
+badfile$Sample_Name <- sub("_(\\d+)_R[0-9]+C[0-9]+", "", badfile$Sample_Name)
+badfile$Sample_Group <- "Unknown"
+badfile
+goodcsv <- badfile
+
+write.csv(goodcsv, "C:/Users/gbloc/OneDrive/Desktop/PCDHG_Gila/Coding/Practise Data processing/skeleta/GSE61452/Idats/correctcsv.csv")
+
+skelly <- champ.load(directory = "C:/Users/gbloc/OneDrive/Desktop/PCDHG_Gila/Coding/Practise Data processing/skeleta/GSE61452/Idats", arraytype = "450K")
+load()
