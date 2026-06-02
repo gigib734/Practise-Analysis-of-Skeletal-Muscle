@@ -44,3 +44,22 @@ load()
 
 path1 <- ("C:/Users/gbloc/OneDrive/Desktop/PCDHG_Gila/Coding/Practise Data processing/skeleta/GSE61452/Idats")
 champ.process(directory = path1)
+
+class(myNorm$beta)
+str(myNorm$beta)
+
+load("./CHAMP_RESULT/myNorm.rda")
+ls()
+class(myNorm)
+str(myNorm, max.level = 1)
+
+champ.norm()
+champ.SVD()
+
+champ.SVD(beta = myNorm)
+is.matrix(myNorm)
+is.data.frame(myNorm)
+is.list(myNorm)
+champ.SVD(beta = myNorm)
+
+#get some help here
